@@ -26,11 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // 뷰컨트롤러 인스턴스 가져오기
         let vc = ViewController()
         
-        // 네비게이션 컨트롤러 설정
-        let navVC = UINavigationController(rootViewController: vc)
-        
         // 뿌리 뷰컨트롤러를 설정
-        window?.rootViewController = navVC
+        window?.rootViewController = vc
         
         // 설정한 윈도우를 보이게 끔 설정
         window?.makeKeyAndVisible()
