@@ -14,7 +14,6 @@ class ViewController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.9973663688, green: 0.6260731816, blue: 0.04106649011, alpha: 1)
         button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.frame = CGRect(x: 160, y: 100, width: 50, height: 50)
         button.addTarget(self, action: #selector(defaultButtonTapHandler), for: .touchUpInside)
         return button
     }()
@@ -28,6 +27,7 @@ class ViewController: UIViewController {
         self.view = UIView()
         self.setView()
         self.setSubviews()
+        self.setConstraints()
     }
     
     private func setView() {
@@ -40,5 +40,17 @@ class ViewController: UIViewController {
         guard let view = self.view else { return }
         
         view.addSubview(defaultButton)
+    }
+    
+    private func setConstraints() {
+        guard let view = self.view else { return }
+        
+        defaultButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addConstraints([
+            defaultButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            defaultButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            defaultButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            
+        ])
     }
 }
