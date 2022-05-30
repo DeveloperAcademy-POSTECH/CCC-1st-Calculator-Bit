@@ -8,22 +8,27 @@
 import UIKit
 
 class CalculatorViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.view = UIView()
+        self.setView()
+        self.setSubviews()
+        self.setConstraints()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setView() {
+        guard let view = self.view else { return }
+        
+        view.backgroundColor = .orange
     }
-    */
-
+    
+    private func setSubviews() {
+        guard let _ = self.view else { return }
+    }
+    
+    private func setConstraints() {
+        guard let _ = self.view else { return }
+    }
 }

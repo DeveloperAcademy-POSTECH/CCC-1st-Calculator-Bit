@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         // 뷰컨트롤러 인스턴스 가져오기
-        let vc = ViewController()
+        let vc = CalculatorViewController()
         
         // 루트 뷰컨트롤러를 설정
         window?.rootViewController = vc
